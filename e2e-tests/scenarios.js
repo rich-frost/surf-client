@@ -19,8 +19,9 @@ describe('my app', function() {
 
 
     it('should render view1 when user navigates to /view1', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+	//browser.debugger();
+      element(by.model('location')).sendKeys('Bude');
+	  expect(by.id('selected-location').text, 'Bude');
     });
 
   });
