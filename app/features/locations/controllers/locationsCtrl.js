@@ -10,6 +10,16 @@ angular.module('myApp.locations', ['ngRoute'])
   });
 }])
 
-.controller('LocationsCtrl', [function() {
-
+.controller('LocationsCtrl', ['$scope', 'message', 'locationConsts', 
+	function($scope, message, locationConsts) {
+		
+		var locations = [];
+		
+        message.subscribe(locationConsts.SEND, function (data) {
+			$scope.locations = data;
+        });
+		
+		//request location data
+		message.publish(locationConsts.GET, null);
+		
 }]);

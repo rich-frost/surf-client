@@ -1,6 +1,6 @@
 'use strict';
 
-
+angular.module('messageModule', []);
 angular.module('dataRetrievers', ['ngResource']);
 
 // Declare app level module which depends on views, and components
@@ -11,7 +11,8 @@ angular.module('myApp', [
   'myApp.locations',
   'myApp.version',
   'ui.bootstrap',
-  'dataRetrievers'
+  'dataRetrievers',
+  'messageModule'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/locations'});
